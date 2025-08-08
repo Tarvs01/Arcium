@@ -1,0 +1,219 @@
+@font-face {
+  font-family: calibre-medium;
+  src: url(../src/assets/fonts/Calibre-Medium-568dce56f869a519a015d3b69443b067.woff2);
+}
+
+@font-face {
+  font-family: calibre-regular;
+  src: url(../src/assets/fonts/Calibre-Regular-b0d4cbb1201155ddccc21d1b8059a670.woff2);
+}
+
+@font-face {
+  font-family: calibre-semi;
+  src: url(../src/assets/fonts/Calibre-Semibold-94fc73852539d6733dc0d80252c5e3fb.woff2);
+}
+
+@font-face {
+  font-family: Arial, Helvetica, sans-serif;
+  src: url(../src/assets/fonts/Avenir\ Light.ttf);
+}
+
+@font-face {
+  font-family: inter-regular;
+  src: url(../src/assets/fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: inter-variable;
+  src: url(../src/assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  width: 100vw;
+  height: 100vh;
+}
+
+ body{
+  background-color: black;
+  color: white;
+  font-family: inter-variable;
+  background-image: url(../src/assets/arcium-2.jpg);
+  background-size: cover;
+  width: 100vw !important;
+  height: 100vh !important;
+ }
+
+ #root{
+  width: 100vw !important;
+  height: 100vh !important;
+ }
+
+
+.main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.welcome{
+  width: 90%;
+  max-width: 500px;
+}
+
+.welcome button{
+  padding: 9px 30px;
+  font-family: inter-variable;
+  border-radius: 3px;
+  display: block;
+  margin: 30px auto;
+  font-weight: 500;
+  border: 2px solid white;
+}
+
+.categories-list{
+  list-style-type: none;
+  width: fit-content;
+  padding: 0;
+  margin: 10px auto;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+  animation: flow-up 0.5s linear 0s 1 forwards;
+}
+
+@keyframes flow-up {
+  0%{
+    top: 10px;
+    opacity: 0.5;
+  }
+
+  100%{
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+.categories-list li{
+  background-color: white;
+  color: black;
+  text-align: center;
+  margin: 7px auto;
+  padding: 8px 7px;
+  width: 80%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.categories-list li > span{
+  display: inline-block;
+  text-align: start;
+  line-height: 18px;
+}
+
+.section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.section-start{
+  width: fit-content;
+  height: fit-content;
+}
+
+.section-start p{
+  font-weight: 600;
+  font-size: 35px;
+}
+
+.section-start button{
+  padding: 8px 30px;
+  font-family: inter-variable;
+  display: block;
+  margin: 20px auto;
+}
+
+.question-cont{
+  width: 400px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.question-cont p{
+  font-size: 18px;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.question-cont ul{
+  list-style-type: none;
+  width: fit-content;
+  padding: 0;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.question-cont li{
+  background-color: white;
+  color: black;
+  text-align: center;
+  margin: 7px auto;
+  padding: 8px 7px;
+  width: 80%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.question-cont li > span{
+  display: inline-block;
+  text-align: start;
+  line-height: 18px;
+}
+
+.question-cont button{
+  padding: 10px 40px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 5px;
+  border: none;
+  font-family: inter-variable;
+  font-weight: 500;
+}
+
+.selected-option{
+  background-color: #704af9 !important;
+  color: white !important;
+}
+
+.answer-cont{
+  width: 80%;
+  margin: 10px auto;
+}
+
+.answer-main{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.answer-main p{
+  text-align: left;
+  padding-left: 5px;
+}
+
+.answer-cont img{
+  width: 40px;
+}
