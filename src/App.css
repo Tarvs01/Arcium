@@ -1,31 +1,31 @@
 @font-face {
   font-family: calibre-medium;
-  src: url(../src/assets/fonts/Calibre-Medium-568dce56f869a519a015d3b69443b067.woff2);
+  src: url(../fonts/Calibre-Medium-568dce56f869a519a015d3b69443b067.woff2);
 }
 
 @font-face {
   font-family: calibre-regular;
-  src: url(../src/assets/fonts/Calibre-Regular-b0d4cbb1201155ddccc21d1b8059a670.woff2);
+  src: url(../fonts/Calibre-Regular-b0d4cbb1201155ddccc21d1b8059a670.woff2);
 }
 
 @font-face {
   font-family: calibre-semi;
-  src: url(../src/assets/fonts/Calibre-Semibold-94fc73852539d6733dc0d80252c5e3fb.woff2);
+  src: url(../fonts/Calibre-Semibold-94fc73852539d6733dc0d80252c5e3fb.woff2);
 }
 
 @font-face {
   font-family: Arial, Helvetica, sans-serif;
-  src: url(../src/assets/fonts/Avenir\ Light.ttf);
+  src: url(../fonts/Avenir\ Light.ttf);
 }
 
 @font-face {
   font-family: inter-regular;
-  src: url(../src/assets/fonts/Inter-Regular.ttf);
+  src: url(../fonts/Inter-Regular.ttf);
 }
 
 @font-face {
   font-family: inter-variable;
-  src: url(../src/assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+  src: url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
 *{
