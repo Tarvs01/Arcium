@@ -23,7 +23,7 @@ function Applications({nextSection, initialMessage}: {nextSection: (score: numbe
   return (
     <div className='section'>
         {isStart && <div className='section-start'>
-            <p>{initialMessage}: Infrastructure</p>
+            <p>{initialMessage}: Applications</p>
             <button onClick={() => setIsStart(!isStart)}>Proceed</button>
         </div>}
 

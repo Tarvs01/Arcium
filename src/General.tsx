@@ -24,7 +24,7 @@ function General({nextSection, initialMessage}: {nextSection: (score: number) =>
   return (
     <div className='section'>
         {isStart && <div className='section-start'>
-            <p>{initialMessage}: Infrastructure</p>
+            <p>{initialMessage}: General</p>
             <button onClick={() => setIsStart(!isStart)}>Proceed</button>
         </div>}
 
