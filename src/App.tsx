@@ -95,9 +95,15 @@ function App() {
       </div> */}
 
       {welcomePageShown && <div className='welcome'>
-        <WelcomeText />
-        <img src="../general/arcium_light.svg" alt="" />
-        <QuizText />
+        <div className="welcome-text-cont">
+          <WelcomeText />
+        </div>
+        <div className='arcium-img-cont'>
+          <img src="../general/arcium_light.svg" alt="" />
+        </div>
+        <div className="quiz-text-cont">
+          <QuizText />
+        </div>
 
         <button onClick={() => {setWelcomePageShown(false); setCateChoosePageShown(true)}}>Proceed</button>
       </div>}

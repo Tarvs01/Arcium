@@ -379,6 +379,31 @@ html{
   animation: fade-in 6s ease-in-out 0s 1 forwards;
 }
 
+/* .welcome-text-cont{
+} */
+
+.arcium-img-cont{
+  height: 120px;
+}
+
+.quiz-text-cont{
+  height: 120px;
+}
+
+.quiz-text-cont svg{
+    position: relative;
+    top: -80px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 440px) {
+  .quiz-text-cont svg{
+    top: -130px;
+    width: 250px !important;
+  }
+}
+
 @keyframes fade-in {
   0%{
     opacity: 0;
@@ -388,13 +413,6 @@ html{
   }
 }
 
-.welcome svg:nth-of-type(2){
-  position: relative;
-  top: -190px;
-  display: block;
-  margin: 0 auto;
-}
-
 .welcome button{
   border: none;
   padding: 10px 35px;
@@ -402,7 +420,6 @@ html{
   display: block;
   margin: 0 auto;
   position: relative;
-  top: -220px;
   font-weight: 500;
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
