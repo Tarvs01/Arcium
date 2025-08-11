@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import type { Transition } from "framer-motion";
 
@@ -62,3 +62,4 @@ function AIAlgo() {
 }
 
 export default AIAlgo;
+ */
