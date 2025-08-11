@@ -39,6 +39,10 @@ html{
   height: 100vh;
 }
 
+:root{
+  --primary-color: #5e32d5;
+}
+
  body{
   background-color: black;
   color: white;
@@ -66,17 +70,17 @@ html{
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-color: rgba(0,0,0,0.8);
 }
 
-.welcome{
+.cate-choose{
   width: 90%;
   max-width: 500px;
 }
 
-.welcome button{
+.cate-choose button{
   padding: 9px 30px;
   font-family: inter-variable;
   border-radius: 3px;
@@ -84,6 +88,10 @@ html{
   margin: 30px auto;
   font-weight: 500;
   border: 2px solid white;
+}
+
+.cate-choose h2{
+  font-family: inter-variable;
 }
 
 .categories-list{
@@ -230,6 +238,7 @@ html{
   top: 0;
   left: 0;
   border: 4px solid #c44cc4;
+  width: 100px;
 }
 
 .svg-cont svg{
@@ -239,4 +248,126 @@ html{
 
 .hidden{
   visibility: hidden;
+}
+
+.score-cont{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+  top: -10%;
+}
+
+.score-cont > div{
+  width: 50%;
+}
+
+.score-cont p{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.score-cont button{
+  font-family: inter-variable;
+  border: none;
+  padding: 8px 30px;
+  border-radius: 5px;
+  color: white;
+  background-color: var(--primary-color);
+  height: fit-content;
+  width: fit-content;
+  font-size: 16px;
+}
+
+.main-score-cont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-score-cont h2{
+  margin-bottom: 20px;
+}
+
+.main-score-cont img{
+  width: 40%;
+  display: block;
+  margin: 10px auto 30px auto;
+}
+
+.score-links-cont ul{
+  list-style-type: none;
+  display: flex;
+}
+
+.score-links-cont ul li{
+  display: flex;
+}
+
+.score-links-cont a{
+  text-decoration: none;
+  color: white;
+  display: block;
+  background-color: var(--primary-color);
+  padding: 9px 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.welcome{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+.welcome svg{
+  width: 100% !important;
+}
+
+.welcome img{
+  display: block;
+  position: relative;
+  top: -70px;
+  animation: fade-in 6s ease-in-out 0s 1 forwards;
+}
+
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.welcome svg:nth-of-type(2){
+  position: relative;
+  top: -190px;
+  display: block;
+  margin: 0 auto;
+}
+
+.welcome button{
+  border: none;
+  padding: 10px 35px;
+  font-family: inter-variable;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: -220px;
+  font-weight: 500;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  transition: all 0.2s linear;
+}
+
+.welcome button:hover{
+  background-color: var(--primary-color);
+  color: white;
 }

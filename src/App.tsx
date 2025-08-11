@@ -7,9 +7,8 @@ import Applications from './Applications';
 import DevFramework from './DevFramework';
 import Tokenomics from './Tokenomics';
 import General from './General';
-import Sthetoscope from './Sthetoscope';
-import PaymentCard from './PaymentCard';
-import Bank from './Bank';
+import WelcomeText from './Welcome';
+import QuizText from './Quiz';
 
 type categoriesType = "infrastructure" | "developer_framework" | "tokenomics" | "applications" | "general";
 
@@ -29,11 +28,17 @@ function App() {
   const [currentCategory, setCurrentCategory] = useState("");
   const [scorePageShown, setScorePageShown] = useState(false);
   const [welcomePageShown, setWelcomePageShown] = useState(true);
+  const [cateChoosePageShown, setCateChoosePageShown] = useState(false);
+  const [scorePercent, setScorePercent] = useState(0);
 
   function nextSection(score: number){
+    let tempTotalScore = totalScore + score;
     setTotalScore(totalScore + score);
 
     if(categoryIndex + 1  === categoryOrder.length){
+      setScorePercent((tempTotalScore/(categoryOrder.length * 10)) * 100);
+      console.log("total score is", tempTotalScore);
+      console.log((tempTotalScore/(categoryOrder.length * 10)) * 100);
       setCurrentCategory("");
       setScorePageShown(true);
       return;
@@ -49,6 +54,7 @@ function App() {
     setCategoryOrder(cate);
     setCurrentCategory(cate[0]);
     setWelcomePageShown(false);
+    setCateChoosePageShown(false);
   }
 
   function setSelectedOptions(option: categoriesType){
@@ -62,17 +68,42 @@ function App() {
     tempCategories[option] = !tempCategories[option];
     setCategoriesSelected(tempCategories);
   }
+
+  function reset(){
+    setTotalScore(0);
+    setInitialMessage("Starting with the first section");
+    setCategoriesSelected({
+      infrastructure: false,
+      developer_framework: false,
+      tokenomics: false,
+      applications: false,
+      general: false
+    });
+    setShowButton(false);
+    setCategoryOrder([]);
+    setCategoryIndex(0);
+    setCurrentCategory("");
+    setScorePageShown(false);
+    setWelcomePageShown(false);
+    setCateChoosePageShown(true);
+  }
   
   return (
     <div className='main'>
-      <div className='svg-cont'>
-        {/* <Sthetoscope /> */}
-        {/* <PaymentCard /> */}
-        <Bank />
-      </div>
-      {welcomePageShown && <div className="welcome">
-        <h2>WELCOME TO ARCIUM QUESTIONAIRE</h2>
-        <p>Choose which of these categories you want to test on. You can choose multiple</p>
+      {/* <div className='svg-cont'>
+        <img src='../general/arcium_primary.svg' />
+      </div> */}
+
+      {welcomePageShown && <div className='welcome'>
+        <WelcomeText />
+        <img src="../general/arcium_light.svg" alt="" />
+        <QuizText />
+
+        <button onClick={() => {setWelcomePageShown(false); setCateChoosePageShown(true)}}>Proceed</button>
+      </div>}
+
+      {cateChoosePageShown && <div className="cate-choose">
+        <h2>Choose which of these categories you want to test on. You can choose multiple</h2>
         <ul className='categories-list'>
           <li onClick={() => setSelectedOptions("infrastructure")} className={categoriesSelected.infrastructure ? "selected-option" : ""}>Infrastructure</li>
           <li onClick={() => setSelectedOptions("developer_framework")} className={categoriesSelected.developer_framework ? "selected-option" : ""}>Dev Framework</li>
@@ -92,8 +123,44 @@ function App() {
 
 
       {scorePageShown && <div className='score-cont'>
-        <p>You scored {totalScore}/{categoryOrder.length * 10}</p> 
+        <div className='main-score-cont'>
+        <h2>You scored {totalScore}/{categoryOrder.length * 10}</h2>
+        {scorePercent}
+        {(scorePercent < 25) && <div>
+          <img src="../pictures/angry.png" alt="angry pic" />
+        </div>}
+        {(scorePercent >= 25 && scorePercent < 50) && <div>
+          <img src="../pictures/sad.png" alt="sad pic" />
+        </div>} 
+        {(scorePercent >= 50 && scorePercent < 75) && <div>
+          <img src="../pictures/happy.png" alt="happy pic" />
+        </div>}
+        {(scorePercent > 75) && <div>
+          <img src="../pictures/enthusiastic.png" alt="enthusiastic pic" />
+        </div>}
+        <button onClick={reset}>Retake the test</button>
+        </div>
 
+        <div className='score-links-cont'>
+          <h2>Check out Arciums socials to learn more about the project</h2>
+          <ul>
+            <li>
+              <a href="https://www.arcium.com/">Website</a>
+            </li>
+            <li>
+              <a href="https://x.com/ArciumHQ">Twitter/X</a>
+            </li>
+            <li>
+              <a href="https://discord.com/invite/arcium">Discord</a>
+            </li>
+            <li>
+              <a href="https://docs.arcium.com/developers">Dev documentation</a>
+            </li>
+            <li>
+              <a href="https://github.com/arcium-hq">Github</a>
+            </li>
+          </ul>
+        </div>
       </div>}
     </div>
   )
