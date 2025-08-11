@@ -24,7 +24,7 @@ function Infrastructure({nextSection, initialMessage}: {nextSection: (score: num
   return (
     <div className='section'>
         {isStart && <div className='section-start'>
-            <p>{initialMessage}: Infrastructure</p>
+            <p>{initialMessage}: <span>Infrastructure</span></p>
             <button onClick={() => setIsStart(!isStart)}>Proceed</button>
         </div>}
 

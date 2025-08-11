@@ -39,29 +39,36 @@ function Question({questions, nextSection}: {questions:questionType[], nextSecti
       setSelectedAnswer("");
     }
   }
+
+  function setAnswer(option: string){
+    if(!showAnswer){
+      setSelectedAnswer(option);
+    }
+  }
+
   return (
     <div className='question-cont'>
       <p>{currentQuestion.question}</p>
       <ul>
-        <li onClick={() => setSelectedAnswer("a")} className={selectedAnswer === "a" ? "selected-option" : ""}><span>{currentQuestion.options.a}</span></li>
-        <li onClick={() => setSelectedAnswer("b")} className={selectedAnswer === "b" ? "selected-option" : ""}><span>{currentQuestion.options.b}</span></li>
-        <li onClick={() => setSelectedAnswer("c")} className={selectedAnswer === "c" ? "selected-option" : ""}><span>{currentQuestion.options.c}</span></li>
-        <li onClick={() => setSelectedAnswer("d")} className={selectedAnswer === "d" ? "selected-option" : ""}><span>{currentQuestion.options.d}</span></li>
+        <li onClick={() => setAnswer("a")} className={selectedAnswer === "a" ? "selected-option" : ""}><span>{currentQuestion.options.a}</span></li>
+        <li onClick={() => setAnswer("b")} className={selectedAnswer === "b" ? "selected-option" : ""}><span>{currentQuestion.options.b}</span></li>
+        <li onClick={() => setAnswer("c")} className={selectedAnswer === "c" ? "selected-option" : ""}><span>{currentQuestion.options.c}</span></li>
+        <li onClick={() => setAnswer("d")} className={selectedAnswer === "d" ? "selected-option" : ""}><span>{currentQuestion.options.d}</span></li>
       </ul>
+
+      {selectedAnswer !== "" && <div className='answer-button'>
+        <button onClick={buttonClick}>Next</button>
+      </div>}
 
       {showAnswer && <div className="answer-cont">
         {selectedAnswer === currentQuestion.answer && <div className='answer-main'>
-          <img src="../pictures/happy.png" alt="" /> 
+          <div><img src="../pictures/happy.png" alt="" /></div> 
           <p>You got it right!</p> 
         </div>}
         {selectedAnswer !== currentQuestion.answer && <div className='answer-main'>
-          <img src="../pictures/sad.png" alt="" />
+          <div><img src="../pictures/sad.png" alt="" /></div>
           <p>Incorrect. The answer is {currentQuestion.options[currentQuestion.answer]}</p>
         </div>}
-      </div>}
-
-      {selectedAnswer !== "" && <div>
-        <button onClick={buttonClick}>Next</button>
       </div>}
     </div>
   )

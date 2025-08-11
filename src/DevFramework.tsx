@@ -23,7 +23,7 @@ function DevFramework({nextSection, initialMessage}: {nextSection: (score: numbe
   return (
     <div className='section'>
         {isStart && <div className='section-start'>
-            <p>{initialMessage}: Developer Framework</p>
+            <p>{initialMessage}: <span>Developer Framework</span></p>
             <button onClick={() => setIsStart(!isStart)}>Proceed</button>
         </div>}
 

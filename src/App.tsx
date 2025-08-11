@@ -125,7 +125,6 @@ function App() {
       {scorePageShown && <div className='score-cont'>
         <div className='main-score-cont'>
         <h2>You scored {totalScore}/{categoryOrder.length * 10}</h2>
-        {scorePercent}
         {(scorePercent < 25) && <div>
           <img src="../pictures/angry.png" alt="angry pic" />
         </div>}
@@ -135,7 +134,7 @@ function App() {
         {(scorePercent >= 50 && scorePercent < 75) && <div>
           <img src="../pictures/happy.png" alt="happy pic" />
         </div>}
-        {(scorePercent > 75) && <div>
+        {(scorePercent >= 75) && <div>
           <img src="../pictures/enthusiastic.png" alt="enthusiastic pic" />
         </div>}
         <button onClick={reset}>Retake the test</button>
