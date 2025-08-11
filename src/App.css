@@ -43,10 +43,17 @@ html{
   background-color: black;
   color: white;
   font-family: inter-variable;
-  background-image: url(../src/assets/arcium-2.jpg);
+  background-image: url(../src/assets/arcium-large.jpg);
   background-size: cover;
   width: 100vw !important;
   height: 100vh !important;
+ }
+
+ @media screen and (max-width: 600px) {
+  body{
+    background-image: url(../src/assets/arcium-small.jpg) !important;
+    background-size: cover;
+  }
  }
 
  #root{
@@ -216,4 +223,20 @@ html{
 
 .answer-cont img{
   width: 40px;
+}
+
+.svg-cont{
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 4px solid #c44cc4;
+}
+
+.svg-cont svg{
+  width: 100px;
+  height: 200px;
+}
+
+.hidden{
+  visibility: hidden;
 }

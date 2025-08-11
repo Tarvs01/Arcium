@@ -7,6 +7,9 @@ import Applications from './Applications';
 import DevFramework from './DevFramework';
 import Tokenomics from './Tokenomics';
 import General from './General';
+import Sthetoscope from './Sthetoscope';
+import PaymentCard from './PaymentCard';
+import Bank from './Bank';
 
 type categoriesType = "infrastructure" | "developer_framework" | "tokenomics" | "applications" | "general";
 
@@ -62,6 +65,11 @@ function App() {
   
   return (
     <div className='main'>
+      <div className='svg-cont'>
+        {/* <Sthetoscope /> */}
+        {/* <PaymentCard /> */}
+        <Bank />
+      </div>
       {welcomePageShown && <div className="welcome">
         <h2>WELCOME TO ARCIUM QUESTIONAIRE</h2>
         <p>Choose which of these categories you want to test on. You can choose multiple</p>
@@ -84,10 +92,14 @@ function App() {
 
 
       {scorePageShown && <div className='score-cont'>
-        <p>You scored {totalScore}/{categoryOrder.length * 10}</p>      
+        <p>You scored {totalScore}/{categoryOrder.length * 10}</p> 
+
       </div>}
     </div>
   )
 }
 
 export default App
+
+
+//#6646f3
