@@ -9,6 +9,7 @@ import Tokenomics from './Tokenomics';
 import General from './General';
 import WelcomeText from './Welcome';
 import QuizText from './Quiz';
+import Animation from './Animation';
 
 type categoriesType = "infrastructure" | "developer_framework" | "tokenomics" | "applications" | "general";
 
@@ -90,9 +91,13 @@ function App() {
   
   return (
     <div className='main'>
-      {/* <div className='svg-cont'>
-        <img src='../general/arcium_primary.svg' />
-      </div> */}
+      <Animation />
+      <div className="temp-img-loader">
+        <img src="../pictures/happy.png" alt="" />
+        <img src="../pictures/sad.png" alt="" />
+        <img src="../pictures/angry.png" alt="" />
+        <img src="../pictures/enthusiastic.png" alt="" />
+      </div>
 
       {welcomePageShown && <div className='welcome'>
         <div className="welcome-text-cont">

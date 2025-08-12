@@ -56,11 +56,11 @@ function Question({questions, nextSection}: {questions:questionType[], nextSecti
         <li onClick={() => setAnswer("d")} className={selectedAnswer === "d" ? "selected-option" : ""}><span>{currentQuestion.options.d}</span></li>
       </ul>
 
-      {selectedAnswer !== "" && <div className='answer-button'>
+      {<div className={selectedAnswer !== "" ? `answer-button` : "answer-button hidden"}>
         <button onClick={buttonClick}>Next</button>
       </div>}
 
-      {showAnswer && <div className="answer-cont">
+      {<div className={showAnswer ? `answer-cont` : "answer-cont hidden"}>
         {selectedAnswer === currentQuestion.answer && <div className='answer-main'>
           <div><img src="../pictures/happy.png" alt="" /></div> 
           <p>You got it right!</p> 
